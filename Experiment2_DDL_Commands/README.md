@@ -1,5 +1,8 @@
 # Experiment 2: DDL Commands
 
+### Name: SARANYA S.
+### Reg.No.: 212223220101
+
 ## AIM
 To study and implement DDL commands and different types of constraints.
 
@@ -105,123 +108,188 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Insert the below data into the Customers table, allowing the City and ZipCode columns to take their default values.
 
-```sql
--- Paste your SQL code below for Question 1
+```
+insert into Customers (CustomerID,Name,Address)
+values(304,'Peter Parker','Spider St');
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1186" height="398" alt="image" src="https://github.com/user-attachments/assets/f54661bb-9637-4831-82d3-790940c81cd3" />
 
 **Question 2**
 ---
--- Paste Question 2 here
+In the Cusomers table, insert a record where some fields are NULL, another record where all fields are filled without any NULL values, and a third record where some fields are filled, and others are left as NULL.
 
-```sql
--- Paste your SQL code below for Question 2
+```
+insert into Customers (CustomerID,Name,Address,City,ZipCode)
+values(306,'Diana Prince','Themyscira',NULL,NULL);
+insert into Customers (CustomerID,Name,Address,City,ZipCode)
+values(307,'Bruce Wayne','Wayne Manor','Gotham',10007);
+insert into Customers(CustomerID,Name,Address,City,ZipCode)
+values(308,'Peter Parker','Queens',NULL,11375);
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1223" height="274" alt="image" src="https://github.com/user-attachments/assets/3610e794-c90e-4463-88f2-b4c44267cbae" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+Create a table named Bonuses with the following constraints:
+BonusID as INTEGER should be the primary key.
+EmployeeID as INTEGER should be a foreign key referencing Employees(EmployeeID).
+BonusAmount as REAL should be greater than 0.
+BonusDate as DATE.
+Reason as TEXT should not be NULL.
 
-```sql
--- Paste your SQL code below for Question 3
+```
+create table Bonuses(
+BonusID integer primary key,
+EmployeeID integer,
+BonusAmount real check (BonusAmount > 0),
+BonusDate date,
+Reason text not null,
+foreign key (EmployeeID) references Employees(EmployeeID)
+);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1311" height="177" alt="image" src="https://github.com/user-attachments/assets/44825cfd-0710-499c-9de7-e8c4643b0801" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+Insert all products from Discontinued_products into Products.
 
-```sql
--- Paste your SQL code below for Question 4
+Table attributes are ProductID, ProductName, Price, Stock
+
+```
+insert into products(ProductID,ProductName,Price,Stock)
+select ProductID,ProductName,Price,Stock
+from Discontinued_products;
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1098" height="259" alt="image" src="https://github.com/user-attachments/assets/9a6887f5-4b6f-47f4-a451-5ecce7dd602f" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to Add a new ParentsNumber column  as number and Adhar_Number as Number in the Student_details table.
 
-```sql
--- Paste your SQL code below for Question 5
+
+```
+alter table Student_details add ParentsNumber number;
+alter table Student_Details add Adhar_Number number;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1253" height="354" alt="image" src="https://github.com/user-attachments/assets/1c7b1edb-ad5c-4884-88ad-0b16a3625b47" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+Create a table named Products with the following columns:
 
-```sql
--- Paste your SQL code below for Question 6
+ProductID as INTEGER
+ProductName as TEXT
+Price as REAL
+Stock as INTEGER
+
+```
+create table Products(
+ProductID INTEGER,
+ProductName TEXT,
+Price REAL,
+Stock INTEGER
+);
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1237" height="269" alt="image" src="https://github.com/user-attachments/assets/aa6407d8-ef0f-4991-9c00-07f22462bae8" />
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to add a new column MobileNumber of type NUMBER and a new column Address of type VARCHAR(100) to the Student_details table.
 
-```sql
--- Paste your SQL code below for Question 7
+
+```
+alter table Student_details add MobileNumber NUMBER;
+alter table Student_details add Address VARCHAR(100);
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1237" height="348" alt="image" src="https://github.com/user-attachments/assets/1dac8177-49f0-4c14-8297-8cc8a1ad62db" />
 
 **Question 8**
 ---
--- Paste Question 8 here
+Create a table named Shipments with the following constraints:
+ShipmentID as INTEGER should be the primary key.
+ShipmentDate as DATE.
+SupplierID as INTEGER should be a foreign key referencing Suppliers(SupplierID).
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
-```sql
--- Paste your SQL code below for Question 8
+```
+create table Shipments(
+ShipmentID integer primary key,
+ShipmentDate date,
+SupplierID integer,
+OrderID integer,
+foreign key (SupplierID) references Suppliers(SupplierID),
+foreign key (OrderID) references Orders(OrderID)
+);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1250" height="233" alt="image" src="https://github.com/user-attachments/assets/81f0c2cd-6f84-4388-9356-db4c171fb584" />
 
 **Question 9**
 ---
--- Paste Question 9 here
+Create a table named Reviews with the following columns:
+
+ReviewID as INTEGER
+ProductID as INTEGER
+Rating as REAL
+ReviewText as TEXT
 
 ```sql
--- Paste your SQL code below for Question 9
+CREATE TABLE Reviews(
+ReviewID INTEGER,
+ProductID INTEGER,
+Rating REAL,
+ReviewText TEXT
+);
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1289" height="362" alt="image" src="https://github.com/user-attachments/assets/feb6948e-06cc-4318-9313-3fa8052b7739" />
 
 **Question 10**
 ---
--- Paste Question 10 here
+Create a table named Orders with the following constraints:
+OrderID as INTEGER should be the primary key.
+OrderDate as DATE should be not NULL.
+CustomerID as INTEGER should be a foreign key referencing Customers(CustomerID).
 
 ```sql
--- Paste your SQL code below for Question 10
+CREATE TABLE Orders(
+OrderID INTEGER PRIMARY KEY,
+OrderDate DATE NOT NULL,
+CustomerID INTEGER ,
+FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1296" height="269" alt="image" src="https://github.com/user-attachments/assets/60c7ce80-e59b-4e3f-92e1-87f1d4613fb1" />
 
 
 ## RESULT
