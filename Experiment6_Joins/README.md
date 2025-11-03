@@ -1,4 +1,4 @@
-
+## Experiment6_Joins
 ## AIM
 To study and implement different types of joins.
 
