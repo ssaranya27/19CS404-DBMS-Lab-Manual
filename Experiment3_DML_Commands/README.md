@@ -1,4 +1,9 @@
 # Experiment 3: DML Commands
+```
+Developed by;
+Name : SARANYA S.
+Reg No : 212223220101
+```
 
 ## AIM
 To study and implement DML (Data Manipulation Language) commands.
@@ -47,123 +52,163 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+![image](https://github.com/user-attachments/assets/c4e1528c-df57-4948-b92b-393999033dbe)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 1
+DELETE FROM Doctors
+WHERE (specialization='Pediatrics' OR specialization='Cardiology')
+AND last_name='Brown';
 ```
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/c138c53c-eddb-4ed1-8bf9-87dd949919d6)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![image](https://github.com/user-attachments/assets/fdcfc8b9-1e00-46e7-ade0-a5a78cd0fb4e)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 2
+DELETE FROM Customer
+WHERE OPENING_AMT BETWEEN 4000 AND 6000;
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/a97d92f6-6b0a-40a7-9e03-02d0e507df5c)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![image](https://github.com/user-attachments/assets/ec4f3118-9615-4fda-87e5-50a27a712cb1)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 3
+SELECT COUNT(*)
+FROM EmployeeInfo
+WHERE Department='HR';
 ```
 
 **Output:**
 
-![Output3](output.png)
+![image](https://github.com/user-attachments/assets/bd47906f-8db3-4f5c-8e60-defe536b1c1a)
 
 **Question 4**
 ---
--- Paste Question 4 here
+![image](https://github.com/user-attachments/assets/2b159c26-9e2d-4ee2-afe9-9b462ef35d4e)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 4
+SELECT ename,hiredate,JULIANDAY('2024-12-31')-JULIANDAY(hiredate) AS days_worked
+FROM emp;
 ```
 
 **Output:**
 
-![Output4](output.png)
+![image](https://github.com/user-attachments/assets/48a283b5-61e5-4846-b03e-9eba01baf494)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![image](https://github.com/user-attachments/assets/2d1bd1d4-4f86-494d-b750-aa3a65c8a778)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 5
+UPDATE sales
+SET sell_price= sell_price+3
+WHERE product_id IN (SELECT product_id
+                        FROM Products
+                        WHERE supplier_id=4);
 ```
 
 **Output:**
 
-![Output5](output.png)
+![image](https://github.com/user-attachments/assets/043200f3-b64a-4929-8820-b17beff5c02f)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![image](https://github.com/user-attachments/assets/859f5f60-73be-4bae-9b8b-68d511c8f0d8)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 6
+SELECT *
+FROM emp
+WHERE hiredate >= DATE('2024-09-01','-6 months');
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/91133ef7-b6a3-4579-9e96-4394b3ed3f5e)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![image](https://github.com/user-attachments/assets/d28c8320-380f-4caa-8365-51f0ad4f802e)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 7
+SELECT *
+FROM salesman
+WHERE commission BETWEEN 0.12 AND 0.14;
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/2806ae32-e7e5-4ef6-b189-38aaac0939fa)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![image](https://github.com/user-attachments/assets/fc2bf715-a56f-4e11-869e-26b82b2cae5b)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 8
+DELETE FROM customer
+WHERE cust_country='India' AND cust_city!='Chennai';
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/54786eb0-8242-4671-9fdc-283b3a674fa8)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![image](https://github.com/user-attachments/assets/2fe4b958-a9cd-4df3-abdc-7e1f005d1ec3)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 9
+DELETE FROM Customer
+WHERE WORKING_AREA='New York';
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/723c3a6c-d418-4a72-ba27-683bb20bb4dc)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![image](https://github.com/user-attachments/assets/9c73c386-b78e-44da-a9f7-4679aa3d052b)
 
+**Program:**
 ```sql
--- Paste your SQL code below for Question 10
+UPDATE Suppliers
+SET address='58 Lakeview, Magnolia'
+WHERE supplier_id=5;
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/4c7d2cb5-8f25-4b71-937b-3622dd93660c)
+
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
+
+## Module Completion
+![image](https://github.com/user-attachments/assets/019e1995-68ba-4afd-90e9-a8bbff812abb)
