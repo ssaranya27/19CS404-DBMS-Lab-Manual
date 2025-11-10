@@ -76,7 +76,39 @@ END;
 - Use a simple cursor to fetch and display employee names and designations.
 - Implement exception handling to catch the relevant exceptions and display appropriate messages.
 
+** PROGRAM: **
+ ```
+DECLARE
+    CURSOR emp_cursor IS
+        SELECT emp_name, designation FROM employees;
+    
+    v_emp_name employees.emp_name%TYPE;
+    v_designation employees.designation%TYPE;
+
+BEGIN
+    OPEN emp_cursor;
+
+    LOOP
+        FETCH emp_cursor INTO v_emp_name, v_designation;
+        EXIT WHEN emp_cursor%NOTFOUND;
+        DBMS_OUTPUT.PUT_LINE('Employee Name: ' || v_emp_name || ', Designation: ' || v_designation);
+    END LOOP;
+
+    CLOSE emp_cursor;
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('No employee records found.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('An unexpected error occurred: ' || SQLERRM);
+END;
+/
+```
+
 **Output:**  
+<img width="913" height="331" alt="image" src="https://github.com/user-attachments/assets/eeb8519e-4e62-4efd-b31d-bad5b27926bb" />
+
+
 The program should display the employee details or an error message.
 
 ---
